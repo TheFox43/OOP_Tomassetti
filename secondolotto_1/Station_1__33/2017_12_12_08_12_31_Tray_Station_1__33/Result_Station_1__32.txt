@@ -1,0 +1,4 @@
+Chip_000	7FEF	Out2Error; 
+Chip_000	7FEF	Out2Error; 
+Chip_000	76AC	POError; POR AvvioError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IDispariError; PORCycleError; 
+Chip_001	Tutto ok

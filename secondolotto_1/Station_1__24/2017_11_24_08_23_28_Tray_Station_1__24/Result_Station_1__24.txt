@@ -1,0 +1,215 @@
+Chip_000	3F9F	ITuttiError; IPariError; 
+Chip_000	3F8F	Out0Error; Out6Error; ITuttiError; IPariError; 
+Chip_000	3FCD	POR AvvioError; Out4Error; ITuttiError; 
+Chip_001	Tutto ok
+Chip_002	3FDF	ITuttiError; 
+Chip_002	Tutto ok
+Chip_003	37FF	SCurveError; 
+Chip_003	3FEC	POError; POR AvvioError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; 
+Chip_003	Tutto ok
+Chip_004	Tutto ok
+Chip_005	3F5F	ITuttiError; IDispariError; 
+Chip_005	Tutto ok
+Chip_006	1F0C	POError; POR AvvioError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; IDispariError; COMError; 
+Chip_006	3FEC	POError; POR AvvioError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; 
+Chip_006	3FCC	POError; POR AvvioError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; 
+Chip_007	Tutto ok
+Chip_008	3F8C	POError; POR AvvioError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; 
+Chip_008	3F8C	POError; POR AvvioError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; 
+Chip_008	37FF	SCurveError; 
+Chip_009	Tutto ok
+Chip_010	3F7F	IDispariError; 
+Chip_010	Tutto ok
+Chip_011	Tutto ok
+Chip_012	1F8C	POError; POR AvvioError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; COMError; 
+Chip_012	Tutto ok
+Chip_013	37FF	SCurveError; 
+Chip_013	3FEC	POError; POR AvvioError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; 
+Chip_013	3FDF	ITuttiError; 
+Chip_014	Tutto ok
+Chip_015	1F0C	POError; POR AvvioError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; IDispariError; COMError; 
+Chip_015	3FEF	Out6Error; 
+Chip_015	Tutto ok
+Chip_016	37FD	POR AvvioError; SCurveError; 
+Chip_016	Tutto ok
+Chip_017	Tutto ok
+Chip_018	1F0C	POError; POR AvvioError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; IDispariError; COMError; 
+Chip_018	1F4C	POError; POR AvvioError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IDispariError; COMError; 
+Chip_018	3FCC	POError; POR AvvioError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; 
+Chip_019	37FF	SCurveError; 
+Chip_019	37FD	POR AvvioError; SCurveError; 
+Chip_019	3FEC	POError; POR AvvioError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; 
+Chip_020	3FEF	Out6Error; 
+Chip_020	37FD	POR AvvioError; SCurveError; 
+Chip_020	3FED	POR AvvioError; Out6Error; 
+Chip_021	Tutto ok
+Chip_022	Tutto ok
+Chip_023	37FF	SCurveError; 
+Chip_023	37FF	SCurveError; 
+Chip_023	37FD	POR AvvioError; SCurveError; 
+Chip_024	37FF	SCurveError; 
+Chip_024	37FF	SCurveError; 
+Chip_024	37FF	SCurveError; 
+Chip_025	3FDF	ITuttiError; 
+Chip_025	3FEF	Out2Error; Out3Error; Out4Error; 
+Chip_025	Tutto ok
+Chip_026	37FF	SCurveError; 
+Chip_026	Tutto ok
+Chip_027	37FD	POR AvvioError; SCurveError; 
+Chip_027	37FD	POR AvvioError; SCurveError; 
+Chip_027	Tutto ok
+Chip_028	3F7D	POR AvvioError; IDispariError; 
+Chip_028	3FEF	Out6Error; 
+Chip_028	Tutto ok
+Chip_029	3FEF	MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; 
+Chip_029	3F1F	ITuttiError; IPariError; IDispariError; 
+Chip_029	Tutto ok
+Chip_030	3FEF	Out6Error; 
+Chip_030	Tutto ok
+Chip_031	Tutto ok
+Chip_032	Tutto ok
+Chip_033	3FEF	Out6Error; 
+Chip_033	Tutto ok
+Chip_034	37FF	SCurveError; 
+Chip_034	3F8C	POError; POR AvvioError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; 
+Chip_034	Tutto ok
+Chip_035	3FCF	Out2Error; Out6Error; ITuttiError; 
+Chip_035	Tutto ok
+Chip_036	Tutto ok
+Chip_037	1FCC	POError; POR AvvioError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; COMError; 
+Chip_037	3FEF	Out1Error; Out6Error; 
+Chip_037	Tutto ok
+Chip_038	3FED	POR AvvioError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; 
+Chip_038	Tutto ok
+Chip_039	3F1F	ITuttiError; IPariError; IDispariError; 
+Chip_039	Tutto ok
+Chip_040	3FEF	Out6Error; 
+Chip_040	37FD	POR AvvioError; SCurveError; 
+Chip_040	1F0C	POError; POR AvvioError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; IDispariError; COMError; 
+Chip_041	37FF	SCurveError; 
+Chip_041	Tutto ok
+Chip_042	Tutto ok
+Chip_043	37FF	SCurveError; 
+Chip_043	3FEF	Out6Error; 
+Chip_043	Tutto ok
+Chip_044	Tutto ok
+Chip_045	3FEF	Out1Error; 
+Chip_045	37FF	SCurveError; 
+Chip_045	Tutto ok
+Chip_046	37FF	SCurveError; 
+Chip_046	1F8C	POError; POR AvvioError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; COMError; 
+Chip_046	1F0E	POError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; IDispariError; COMError; 
+Chip_047	1D0E	POError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; IDispariError; TPPadError; COMError; 
+Chip_047	1FFF	COMError; 
+Chip_047	1F8C	POError; POR AvvioError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; COMError; 
+Chip_048	1FFF	COMError; 
+Chip_048	Tutto ok
+Chip_049	1F8C	POError; POR AvvioError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; COMError; 
+Chip_049	1D0E	POError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; IDispariError; TPPadError; COMError; 
+Chip_049	37FD	POR AvvioError; SCurveError; 
+Chip_050	17FF	SCurveError; COMError; 
+Chip_050	1FEF	Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; COMError; 
+Chip_050	Tutto ok
+Chip_051	1D0E	POError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; IDispariError; TPPadError; COMError; 
+Chip_051	37FF	SCurveError; 
+Chip_051	37FF	SCurveError; 
+Chip_052	Tutto ok
+Chip_053	37FF	SCurveError; 
+Chip_053	37FF	SCurveError; 
+Chip_053	37FF	SCurveError; 
+Chip_054	1DED	POR AvvioError; Out6Error; TPPadError; COMError; 
+Chip_054	37FF	SCurveError; 
+Chip_054	1D0F	Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; IDispariError; TPPadError; COMError; 
+Chip_055	37FF	SCurveError; 
+Chip_055	3F0F	Out5Error; ITuttiError; IPariError; IDispariError; 
+Chip_055	Tutto ok
+Chip_056	1F3F	IPariError; IDispariError; COMError; 
+Chip_056	37FF	SCurveError; 
+Chip_056	37FF	SCurveError; 
+Chip_057	Tutto ok
+Chip_058	3FEF	Out6Error; 
+Chip_058	37FF	SCurveError; 
+Chip_058	37FF	SCurveError; 
+Chip_059	1D0F	Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; IDispariError; TPPadError; COMError; 
+Chip_059	1F0F	MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; IDispariError; COMError; 
+Chip_059	Tutto ok
+Chip_060	1FEF	Out6Error; COMError; 
+Chip_060	3FEF	Out6Error; 
+Chip_060	37FF	SCurveError; 
+Chip_061	1FFF	COMError; 
+Chip_061	1DCF	MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; TPPadError; COMError; 
+Chip_061	Tutto ok
+Chip_062	3FEF	Out6Error; 
+Chip_062	3FEF	Out2Error; Out6Error; 
+Chip_062	3FEF	Out2Error; 
+Chip_063	3FEF	Out6Error; 
+Chip_063	Tutto ok
+Chip_064	1C3F	IPariError; IDispariError; IDisError; TPPadError; COMError; 
+Chip_064	37FF	SCurveError; 
+Chip_064	Tutto ok
+Chip_065	37FF	SCurveError; 
+Chip_065	37FF	SCurveError; 
+Chip_065	37FF	SCurveError; 
+Chip_066	1D0E	POError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; IDispariError; TPPadError; COMError; 
+Chip_066	3F8E	POError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; 
+Chip_066	1D0E	POError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; IDispariError; TPPadError; COMError; 
+Chip_067	Tutto ok
+Chip_068	1C0E	POError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; IDispariError; IDisError; TPPadError; COMError; 
+Chip_068	Tutto ok
+Chip_069	3FEF	Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; 
+Chip_069	37FF	SCurveError; 
+Chip_069	Tutto ok
+Chip_070	1FFF	COMError; 
+Chip_070	1E5F	ITuttiError; IDispariError; IDisError; COMError; 
+Chip_070	Tutto ok
+Chip_071	37FF	SCurveError; 
+Chip_071	37FD	POR AvvioError; SCurveError; 
+Chip_071	Tutto ok
+Chip_072	Tutto ok
+Chip_073	3FEF	Out2Error; Out5Error; 
+Chip_073	1F0E	POError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; IDispariError; COMError; 
+Chip_073	1FFF	COMError; 
+Chip_074	37FF	SCurveError; 
+Chip_074	1FFF	COMError; 
+Chip_074	3FEF	Out6Error; 
+Chip_075	Tutto ok
+Chip_076	37FF	SCurveError; 
+Chip_076	37FF	SCurveError; 
+Chip_076	Tutto ok
+Chip_077	1FDF	ITuttiError; COMError; 
+Chip_077	1F6F	Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; IDispariError; COMError; 
+Chip_077	3FEF	Out2Error; 
+Chip_078	1F8F	Out5Error; ITuttiError; IPariError; COMError; 
+Chip_078	Tutto ok
+Chip_079	1FFF	COMError; 
+Chip_079	Tutto ok
+Chip_080	37FF	SCurveError; 
+Chip_080	37FF	SCurveError; 
+Chip_080	37FF	SCurveError; 
+Chip_081	3FEF	Out2Error; Out4Error; Out5Error; Out6Error; 
+Chip_081	1F9F	ITuttiError; IPariError; COMError; 
+Chip_081	37FF	SCurveError; 
+Chip_082	3F1F	ITuttiError; IPariError; IDispariError; 
+Chip_082	37FF	SCurveError; 
+Chip_082	37FF	SCurveError; 
+Chip_083	3FEF	Out2Error; 
+Chip_083	37FF	SCurveError; 
+Chip_083	3FED	POR AvvioError; Out6Error; 
+Chip_084	3FDF	ITuttiError; 
+Chip_084	Tutto ok
+Chip_085	3FEF	Out7Error; 
+Chip_085	Tutto ok
+Chip_086	Tutto ok
+Chip_087	3FEF	Out6Error; 
+Chip_087	3FDF	ITuttiError; 
+Chip_087	37FF	SCurveError; 
+Chip_088	37FF	SCurveError; 
+Chip_088	37FF	SCurveError; 
+Chip_088	Tutto ok
+Chip_089	37FF	SCurveError; 
+Chip_089	1E1F	ITuttiError; IPariError; IDispariError; IDisError; COMError; 
+Chip_089	3FEF	Out3Error; 
+Chip_090	Tutto ok
+Chip_091	37FF	SCurveError; 
+Chip_091	37FF	SCurveError; 
+Chip_091	37FF	SCurveError; 

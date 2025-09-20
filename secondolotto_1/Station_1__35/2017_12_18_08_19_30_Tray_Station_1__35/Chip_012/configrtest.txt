@@ -1,0 +1,32 @@
+Analog: 1.385264 Digital: 0.327397 Digital_core: 0.013816 Temp °K: 298.486502
+
+DBG:TGT target_claro_param: 00000001 
+
+Test POR AVVIO: RCFG READBACK: 5D0000FF 03FBF7C6 BBBC9F87 F96582FE
+Errore POR AVVIO
+ACFG READBACK: 00000000 31431431 43143143 14314314
+
+Analog: 1.362534 Digital: 0.691079 Digital_core: 0.013777 Level out: 2.442628; 2.347318; 2.268311; 2.253889; 2.342772; 2.275679; 2.343869; 2.341988; 2.347475
+SEU Inviati:15; SEU Letti:15; SEU ok!
+Impulso tutti: HITCOUNT_READ: ch7-6: 03E803E8 ch5-4: 03E803E8 ch3-2: 03E803E8 ch1-0: 03E803E8
+ Test ok!
+Impulso pari: HITCOUNT_READ: ch7-6: 000003E8 ch5-4: 000003E8 ch3-2: 000003E8 ch1-0: 000003E8
+ Pari ok!
+Impulso dispari: HITCOUNT_READ: ch7-6: 03E80000 ch5-4: 03E80000 ch3-2: 03E80000 ch1-0: 03E80000
+ Test ok!
+Impulso tutti dis: HITCOUNT_READ: ch7-6: 00000000 ch5-4: 00000000 ch3-2: 00000000 ch1-0: 00000000
+ Test dis ok!
+Impulso tutti TP_PAD: 
+TP_PAD counts for ch7 .. ch0: 
+ch[0] hit count: 1 
+ch[1] hit count: 1 
+ch[2] hit count: 1 
+ch[3] hit count: 1 
+ch[4] hit count: 1 
+ch[5] hit count: 1 
+ch[6] hit count: 1 
+ch[7] hit count: 1 
+ Test TP_PAD ok!
+Mando ciclo POR: RCFG READBACK: 00000F00 00000000 00000000 00000000
+ Test POR ok!
+Errori comunicazione:
