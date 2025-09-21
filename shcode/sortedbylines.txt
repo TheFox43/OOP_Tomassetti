@@ -1,6 +1,6 @@
-9../data_shell/molecules/methane.pdb
-12../data_shell/molecules/ethane.pdb
-15../data_shell/molecules/propane.pdb
-20../data_shell/molecules/cubane.pdb
-21../data_shell/molecules/pentane.pdb
-30../data_shell/molecules/octane.pdb
+methane
+ethane
+propane
+cubane
+pentane
+octane
