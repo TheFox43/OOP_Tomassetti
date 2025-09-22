@@ -16,6 +16,6 @@ list=$(wc -l $path*.pdb | sort -n | tr -s ' ' | cut -d ' ' -f 3 | head -n $N)
 #sappiamo la posizione ossia il numero di / + 1, poi puliamo il tipo di file toglindo dopo il punto, serve un ciclo che echo stampa solo il primo oggetto
 for listed in $list
 do
-    echo $listed | cut -d "/" -f 4 | cut -d "." -f 1 >> ./sortedbylines.txt
+    echo $listed | cut -d "/" -f 4 | cut -d "." -f 1 >> ./sortedmolecules.txt
 done
-cat ./sortedbylines.txt
+cat ./sortedmolecules.txt
