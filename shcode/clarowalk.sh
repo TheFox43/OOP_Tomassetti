@@ -4,29 +4,36 @@
 #good_files.txt and the other one as bad_files.txt
 ###
 
-#Assigning the relative paths to the datafile folders and
-#to the folder where we would like to store the results
+#Assigning the relative paths to the datafile folder and the filepath
+#of the listing results
 filepath="../secondolotto_1/"
 goodchips="./file_lists/good_chips.txt"
 badchips="./file_lists/bad_chips.txt"
 goodfiles="./file_lists/good_files.txt"
 badfiles="./file_lists/bad_files.txt"
+#Final output file of processed datas
+processeddata="./processed_data.txt"
 
 #Third try
-for Chip in $(find "$filepath" -type d -name "Chip_*")
+for Chip in $(find "$filepath" -path "*__[0-9]*/*_Summary/Chip*" -type d -name "Chip_*")
 do
     #To use grep on a directory you must use the "" to format as a string
     echo "$Chip" | grep "ERR" >> "$badchips"
     echo "$Chip" | grep -v "ERR" >> "$goodchips"
-    for file in $(find "$Chip" -type f -name "Ch*.txt")
+    #Prima di sto for serve un cazzo di if che sia goodchips
+    for file in $(find "$Chip" -path "*/S_curve/*" -type f -name "Ch*.txt")
     do
-        #Find the number of lines inside the file, tr and cut to get just the number
+        #Check of the format of the file, it has to be good or get discarded
         lines=$(wc -l "$file" | tr -s " " | cut -d " " -f 2)
         if (( lines == 0 ));
         then
             echo "$file" >> "$badfiles"
         else
             echo "$file" >> "$goodfiles"
+            #Data cleaning: transition point and width
+            trans=$(head -n 1 "$file" | cut -d " " -f 2)
+            width=$(head -n 1 "$file" | cut -d " " -f 3)
+            echo "$trans"
         fi
     done
 done
