@@ -12,6 +12,26 @@ badchips="./file_lists/bad_chips.txt"
 goodfiles="./file_lists/good_files.txt"
 badfiles="./file_lists/bad_files.txt"
 
+#Third try
+for Chip in $(find "$filepath" -type d -name "Chip_*")
+do
+    #To use grep on a directory you must use the "" to format as a string
+    echo "$Chip" | grep "ERR" >> "$badchips"
+    echo "$Chip" | grep -v "ERR" >> "$goodchips"
+    for file in $(find "$Chip" -type f -name "Ch*.txt")
+    do
+        #Find the number of lines inside the file, tr and cut to get just the number
+        lines=$(wc -l "$file" | tr -s " " | cut -d " " -f 2)
+        if (( lines == 0 ));
+        then
+            echo "$file" >> "$badfiles"
+        else
+            echo "$file" >> "$goodfiles"
+        fi
+    done
+done
+
+: << COMMENT
 #Second try
 for Chip in $(find "$filepath" -type d -name "Chip_*")
 do
@@ -30,6 +50,7 @@ do
         echo "$file" >> "$goodfiles"
     fi
 done
+COMMENT
 
 #First try
 : <<COMMENT
