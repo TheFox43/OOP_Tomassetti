@@ -7,8 +7,29 @@
 #Assigning the relative paths to the datafile folders and
 #to the folder where we would like to store the results
 filepath="../secondolotto_1/"
-goodpath="./file_lists/good_files.txt"
-badpath="./file_lists/bad_files.txt"
+goodchips="./file_lists/good_chips.txt"
+badchips="./file_lists/bad_chips.txt"
+goodfiles="./file_lists/good_files.txt"
+badfiles="./file_lists/bad_files.txt"
+
+#Second try
+for Chip in $(find "$filepath" -type d -name "Chip_*")
+do
+    #To use grep on a directory you must use the "" to format as a string
+    echo "$Chip" | grep "ERR" >> "$badchips"
+    echo "$Chip" | grep -v "ERR" >> "$goodchips"
+done
+for file in $(find $(cat "$goodchips") -type f -name "Ch*.txt")
+do
+    #Find the number of lines inside the file, tr and cut to get just the number
+    lines=$(wc -l "$file" | tr -s " " | cut -d " " -f 2)
+    if (( lines == 0 ));
+    then
+        echo "$file" >> "$badfiles"
+    else
+        echo "$file" >> "$goodfiles"
+    fi
+done
 
 #First try
 : <<COMMENT
@@ -31,18 +52,10 @@ do
             #echo $sub3
             for sub4 in $(ls $sub3*/)
             do
-                find $sub4 -name "*ERR*.txt" >> $badpath
+                find $sub4 -name "*ERR*.txt" >> $badfiles
                 #echo "Listing "$sub4
             done
         done
     done
 done
 COMMENT
-
-#Second try
-for Chip in $(find $filepath -type d -name "Chip_*")
-do
-    #echo "Listing "$Chip
-    echo $(find $Chip -type f -name "ERR")
-    #echo "Listing "$(find "$Chip""/S_curve/" -type f -name "*.txt")
-done
