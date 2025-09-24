@@ -15,28 +15,64 @@ badfiles="./file_lists/bad_files.txt"
 processeddata="./processed_data.txt"
 
 #Third try
+#
+#Getting the precessed data file ready
+echo "N,M,Chip#,Offset,Ch,TRANS,WIDTH" > "$processeddata"
+#
+#Walking and filtering the right chips directories
 for Chip in $(find "$filepath" -path "*__[0-9]*/*_Summary/Chip*" -type d -name "Chip_*")
 do
     #To use grep on a directory you must use the "" to format as a string
     echo "$Chip" | grep "ERR" >> "$badchips"
-    echo "$Chip" | grep -v "ERR" >> "$goodchips"
-    #Prima di sto for serve un cazzo di if che sia goodchips
-    for file in $(find "$Chip" -path "*/S_curve/*" -type f -name "Ch*.txt")
+    chiptemp=$(echo "$Chip" | grep -v "ERR")
+    echo "$chiptemp" >> "$goodchips"
+    #Walking through everyfile to list them and take the data out
+    for file in $(find "$chiptemp" -path "*/S_curve/*" -type f -name "Ch*.txt")
     do
-        #Check of the format of the file, it has to be good or get discarded
-        lines=$(wc -l "$file" | tr -s " " | cut -d " " -f 2)
-        if (( lines == 0 ));
+        #First check: empty file or not
+        if [ ! -s "$file" ];
         then
             echo "$file" >> "$badfiles"
         else
-            echo "$file" >> "$goodfiles"
-            #Data cleaning: transition point and width
+            #Trying to get the data out of the file: transition point and width
             trans=$(head -n 1 "$file" | cut -d " " -f 2)
             width=$(head -n 1 "$file" | cut -d " " -f 3)
-            echo "$trans"
+            #Second check: the format of the file, it has to be good or to get discarded
+            if [[ -z $trans && -z $width ]]; #double parenthesis because it's a boolean operation, we could write -a to say AND, while -z means NOT
+            then
+                #If it's true, it means that trans and width cathed no numeric values
+                echo "$file" >> "$goodfiles"
+            else
+                #Getting the information out of the file name, now that we know it's a good one
+                numbers=$(echo "$file" | grep -o "[0-9]\+" | tr "\n" ",")
+                echo "$numbers"",""$trans"",""$width" >> "$processeddata"
+            fi
         fi
     done
 done
+
+#Old filter
+#lines=$(wc -l "$file" | tr -s " " | cut -d " " -f 2)
+#if [ "$lines" -eq 0 ];
+
+#Old nested loop
+: << COMMENT
+for file in $(find $(cat "$goochips") -path "*/S_curve/*" -type f -name "Ch*.txt")
+do
+    #Check of the format of the file, it has to be good or get discarded
+    lines=$(wc -l "$file" | tr -s " " | cut -d " " -f 2)
+    if (( lines == 0 ));
+    then
+        echo "$file" >> "$badfiles"
+    else
+        echo "$file" >> "$goodfiles"
+        #Data cleaning: transition point and width
+        trans=$(head -n 1 "$file" | cut -d " " -f 2)
+        width=$(head -n 1 "$file" | cut -d " " -f 3)
+        echo "$trans"
+    fi
+done
+COMMENT
 
 : << COMMENT
 #Second try
