@@ -1,5 +1,0 @@
-Chip_031	3FEF	Out6Error; 
-Chip_031	Tutto ok
-Chip_032	3FDF	ITuttiError; 
-Chip_032	37FF	SCurveError; 
-Chip_032	37FF	SCurveError; 

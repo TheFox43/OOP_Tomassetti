@@ -1,0 +1,32 @@
+Analog: 1.488726 Digital: 0.710674 Digital_core: 0.013307 Temp °K: 300.623063
+
+DBG:TGT target_claro_param: 00000001 
+
+Test POR AVVIO: RCFG READBACK: FB80007F FFFFFFFF FFFFF6F7 BFFEEFFF
+Errore POR AVVIO
+ACFG READBACK: FB80007F FFFFFFFF FFFFF6F7 BFFEEFFF
+
+Analog: 1.489510 Digital: 4.421570 Digital_core: 0.013229 Level out: 1.493918; 0.000154; 1.393121; 0.000154; 0.000154; 0.000154; 0.000311; 0.000154; 0.000154
+SEU Inviati:15; SEU Letti:65535; Errore SEU 
+Impulso tutti: HITCOUNT_READ: ch7-6: 00000000 ch5-4: 00000000 ch3-2: 00000000 ch1-0: FFFF0000
+Errore
+Impulso pari: HITCOUNT_READ: ch7-6: 00000000 ch5-4: 00000000 ch3-2: 00000000 ch1-0: FFFF0000
+Pari errore
+Impulso dispari: HITCOUNT_READ: ch7-6: 00000000 ch5-4: 00000000 ch3-2: 00000000 ch1-0: FFFF0000
+Errore
+Impulso tutti dis: HITCOUNT_READ: ch7-6: 00000000 ch5-4: 00000000 ch3-2: 00000000 ch1-0: FFFF0000
+Errore dis
+Impulso tutti TP_PAD: 
+TP_PAD counts for ch7 .. ch0: 
+ch[0] hit count: 1 
+ch[1] hit count: 1 
+ch[2] hit count: 1 
+ch[3] hit count: 1 
+ch[4] hit count: 1 
+ch[5] hit count: 1 
+ch[6] hit count: 1 
+ch[7] hit count: 1 
+ Test TP_PAD ok!
+Mando ciclo POR: RCFG READBACK: FFFFFFFF FFFFFFFF FFFFFFFF F0000000
+Errore POR
+Errori comunicazione:-20-20-20-20-50-50-50-50-50-50-50-50-50-50-50-50-50-50-50-50-50-50-50-50-50-50-50-50-20

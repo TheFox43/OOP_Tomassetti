@@ -1,0 +1,6 @@
+Chip_100	1B0D	POR AvvioError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; IDispariError; PORCycleError; COMError; 
+Chip_100	1D0D	POR AvvioError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; IDispariError; TPPadError; COMError; 
+Chip_100	1C0E	POError; MISOError; Out0Error; Out1Error; Out2Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; IDispariError; IDisError; TPPadError; COMError; 
+Chip_101	1C0F	MISOError; Out0Error; Out1Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; IDispariError; IDisError; TPPadError; COMError; 
+Chip_101	1C0F	MISOError; Out0Error; Out1Error; Out3Error; Out4Error; Out5Error; Out6Error; Out7Error; ITuttiError; IPariError; IDispariError; IDisError; TPPadError; COMError; 
+Chip_101	Tutto ok

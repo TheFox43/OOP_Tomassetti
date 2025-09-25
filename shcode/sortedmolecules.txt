@@ -1,6 +1,0 @@
-methane
-ethane
-propane
-cubane
-pentane
-octane
