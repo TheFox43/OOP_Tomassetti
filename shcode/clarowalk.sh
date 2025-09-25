@@ -11,7 +11,7 @@ badchips="./file_lists/bad_chips.txt"
 goodfiles="./file_lists/good_files.txt"
 badfiles="./file_lists/bad_files.txt"
 #Final output file of processed datas
-processeddata="./processed_data.txt"
+processeddata="./processed_data.csv"
 
 #Fourth try
 #
@@ -24,39 +24,47 @@ else
 	echo "+  Already existing $badchips list"
 fi
 #Check if there is any good file list already, this is Professor's if statement, it does not check empty or bad files though
-if [[ ! -s "$good_files" || ! -f "$goodfiles" ]];
+if [[ ! -s "$goodfiles" ]];
 then
+    #Initializing files
+    : > ./file_lists/good_files.txt
+    : > ./file_lists/bad_files.txt
+    : > ./file_lists/bad_chips.txt
+
 	echo "+  Finding fitting files and processing them"
     #Getting the precessed data file ready
     echo "N,M,Chip#,Offset,Ch,TRANS,WIDTH" > "$processeddata"
-	for file in $(find "$filepath" -path "*__[0-9]*/*_Summary/Chip_???/S_curve/*" -type f -name "Ch_?_offset_?_Chip_???.txt")
+    while IFS= read -r -d "" file;
     do
-        if [[ ! -s "$file" || ! -f "$file" ]];
+        [[ -z "$file" ]] && continue
+        if [[ ! -s "$file" ]];
         then
             echo "$file" >> "$badfiles"
-        else
-            #Trying to get the data out of the file: transition point and width
-            trans=$(head -n 1 "$file" | cut -f 2)
-            width=$(head -n 1 "$file" | cut -f 3)
-            #Second check: the format of the file, it has to be good or to get discarded
-            if [[ -z $trans || -z $width ]]; #double parenthesis because it's a boolean operation, we could write -a to say AND, while -z means NOT
-            then
-                #If it's true, it means that trans and width cathed no numeric values
-                echo "$file" >> "$badfiles"
-            else
-                #Getting the information out of the file name, now that we know it's a good one
-                numbers=$(grep -o "[0-9]\+" <<< "$file" | tr "\n" ",")
-                echo "$file" >> "$goodfiles"
-                echo "${numbers%,},$trans,$width" >> "$processeddata" #removing the exceeding "," with %,
-            fi
+            continue
         fi
-    done
+
+        #Trying to get the data out of the file: transition point and width
+        trans=$(head -n 1 "$file" | cut -f 2)
+        width=$(head -n 1 "$file" | cut -f 3)
+        #Second check: the format of the file, it has to be good or to get discarded
+        if [[ -z $trans || -z $width ]]; #double parenthesis because it's a boolean operation, we could write -a to say AND, while -z means NOT
+        then
+            #If it's true, it means that trans and width cathed no numeric values
+            echo "$file" >> "$badfiles"
+            continue
+        else
+            #Getting the information out of the file name, now that we know it's a good one
+            numbers=$(grep -o "[0-9]\+" <<< "$file" | tr "\n" ",")
+            echo "$file" >> "$goodfiles"
+            echo "${numbers%,},$trans,$width" >> "$processeddata" #removing the exceeding "," with %,
+        fi
+    done < <(find "$filepath" -path "*__[0-9]*/*_Summary/Chip_???/S_curve/*" -type f -name "Ch_?_offset_?_Chip_???.txt" -print0)
 else
 	echo "+  Using $goodfiles list"
     #Getting the precessed data file ready
     echo "N,M,Chip#,Offset,Ch,TRANS,WIDTH" > "$processeddata"
     #Walking and filtering the right chips directories
-    for file in $(cat "$goodfiles")
+    while IFS= read -r file;
     do
         #Trusting the already existing file list, there's no need to check the file format and the data inside of it
         trans=$(head -n 1 "$file" | cut -f 2)
@@ -64,7 +72,7 @@ else
         numbers=$(echo "$file" | grep -o "[0-9]\+" | tr "\n" ",")
         echo "$numbers,$trans,$width" >> "$processeddata"
         echo "$file" >> "$goodfiles"
-    done
+    done < "$goodfiles"
 fi
 
 : << COMMENT
