@@ -16,9 +16,9 @@ if [[ -z $1 ]]; then
 	exit 1
 fi
 
-OUTFILE="${2:-./processed_data.csv}"
-FFILEIN="./file_lists/filein_files.txt"
-FFILEOUT="./file_lists/good_files.txt"
+OUTFILE="../../outdata/processed_data.csv}"
+FFILEIN="../../outdata/file_lists/filein_files.txt"
+FFILEOUT="../../outdata/file_lists/good_files.txt"
 
 # Trova i file da elaborare (solo se non esiste già la lista)
 if [[ ! -f $FFILEIN ]]; then
@@ -34,7 +34,7 @@ echo "$NFILES files to process..."
 
 # Sovrascrivi il file di output e scrivi l'intestazione
 echo "N,M,Chip#,Offset,Ch,TRANS,WIDTH" > "$OUTFILE"
-echo "N,M,Chip#,Offset,Ch,TRANS,WIDTH" > "./file_lists/claro_bad.txt"
+echo "N,M,Chip#,Offset,Ch,TRANS,WIDTH" > "../../outdata/file_lists/bad_files.txt"
 
 COUNTER=0
 
@@ -51,7 +51,7 @@ while IFS= read -r FILENAME; do
 		echo "$FILENAME" >> "$FFILEOUT"
 		((COUNTER++))
 	else
-		echo "$FILENAME" >> "./file_lists/bad_files.txt"
+		echo "$FILENAME" >> "../../outdata/file_lists/bad_files.txt"
 	fi
 
 	# Output di stato ogni 1000 file

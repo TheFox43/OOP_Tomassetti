@@ -1,7 +1,8 @@
 ###
 #This file aim to look through an entire data folder with nested
-#folders and to make two lists out of the data sets, one called
-#good_files.txt and the other one as bad_files.txt
+#folders and to make lists out of the data sets, one called
+#good_files.txt and the other ones called bad_chips.txt bad_files.txt,
+#then to re-group the right-formatted data into processed_data.csv.
 ###
 
 #Assigning the relative paths to the datafile folder and the filepath
@@ -10,10 +11,11 @@ filepath="../../data/secondolotto_1/"
 badchips="../../outdata/file_lists/bad_chips.txt"
 goodfiles="../../outdata/file_lists/good_files.txt"
 badfiles="../../outdata/file_lists/bad_files.txt"
-#Initializing output file
-: > ./file_lists/bad_files.txt
-#Final output file of processed datas
+#Initializing badfiles output file
+: > "$badfiles"
+#Final output file of processed datas with its initialization
 processeddata="../../outdata/processed_claro.csv"
+: > "$processeddata"
 
 #Fourth try
 #
@@ -21,7 +23,7 @@ processeddata="../../outdata/processed_claro.csv"
 if [[ ! -s "$badchips" || ! -f "$badchips" ]];
 then
     #Initializing the output file
-    : > ./file_lists/bad_chips.txt
+    : > "$badchips"
 	echo "+  Finding bad chips folders"
 	find "$filepath" -path "*__[0-9]*/*_Summary/*" -type d -name "Chip*ERR*" > "$badchips"
 else
@@ -30,28 +32,36 @@ fi
 #Check if there is any good file list already, this is Professor's if statement, it does not check empty or bad files though
 if [[ ! -s "$goodfiles" ]];
 then
-    #Initializing files
-    : > ./file_lists/good_files.txt
+    #Initializing goodfiles output files
+    : > "$goodfiles"
 
 	echo "+  Finding fitting files and processing them"
-    #Getting the precessed data file ready
+    #Getting the processed data file ready
     echo "N,M,Chip#,Offset,Ch,TRANS,WIDTH" > "$processeddata"
-    while IFS= read -r -d "" file;
+    while IFS= read -r -d $'\0' file #This delimeter is because of the -print0 option of the find that we give as reading input of the while
     do
-        [[ -z "$file" ]] && continue
-        if [[ ! -s "$file" ]];
+        #Checking if the file exists and it is not empty
+        if [[ ! -s "$file" || -z "$file" ]];
         then
+            echo "+  Found and listing a bad data-file: $file"
             echo "$file" >> "$badfiles"
-            continue
+            continue #Continue with the next file of the loop if the check goes positive
         fi
 
         #Trying to get the data out of the file: transition point and width
         trans=$(head -n 1 "$file" | cut -f 2)
         width=$(head -n 1 "$file" | cut -f 3)
-        #Second check: the format of the file, it has to be good or to get discarded
-        if [[ -z $trans || -z $width ]]; #double parenthesis because it's a boolean operation, we could write -a to say AND, while -z means NOT
+        #First data-check: the variables exist and are not empty
+        if ! [[ -n $trans ]] || ! [[ -n $width ]];
         then
-            #If it's true, it means that trans and width cathed no numeric values
+            echo "$file" >> "$badfiles"
+            continue;
+        fi
+        #Second check: the data format, it has to be good or to get discarded, we use a variabile to do the check for legibility purposes
+        floatregex='^[+-]?[0-9]+(\.[0-9]+)?$'
+        if ! [[ $trans =~ $floatregex ]] || ! [[ $width =~ $floatregex ]]; #double parenthesis because it's a boolean operation, we could write -a to say AND, while -z means NOT
+        then
+            #If it's true, it means that trans and width catched no numeric values
             echo "$file" >> "$badfiles"
             continue
         else
@@ -66,12 +76,12 @@ else
     #Getting the precessed data file ready
     echo "N,M,Chip#,Offset,Ch,TRANS,WIDTH" > "$processeddata"
     #Walking and filtering the right chips directories
-    while IFS= read -r file;
+    while IFS= read -r file
     do
         #Trusting the already existing file list, there's no need to check the file format and the data inside of it
         trans=$(head -n 1 "$file" | cut -f 2)
         width=$(head -n 1 "$file" | cut -f 3)
-        numbers=$(echo "$file" | grep -o "[0-9]\+" | tr "\n" ",")
+        numbers=$(grep -o "[0-9]\+" <<< "$file" | tr "\n" ",")
         echo "$numbers,$trans,$width" >> "$processeddata"
         echo "$file" >> "$goodfiles"
     done < "$goodfiles"
